@@ -1,0 +1,227 @@
+// display: flex
+//  http://stackoverflow.com/questions/15662578/flexible-box-model-display-flex-box-flexbox by RubyLouvre
+.flexbox() {
+  // 2009 spec
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+
+  // tweener
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: -ms-flexbox;
+  display: -o-flexbox;
+
+  // new spec
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+// flex //
+.flex(@flex) {
+  -webkit-box-flex: @flex;
+  -moz-box-flex: @flex;
+  -o-box-flex: @flex;
+  -webkit-flex: @flex;
+  -moz-flex: @flex;
+  -ms-flex: @flex;
+  -o-flex: @flex;
+  flex: @flex;
+}
+
+// flex-derection = box-orient + box-direction
+.flex-direction(@direction) when (@direction = row) {
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.flex-direction(@direction) when (@direction = row-reverse) {
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+  -moz-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+.flex-direction(@direction) when (@direction = column) {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.flex-direction(@direction) when (@direction = column-reverse) {
+
+//http://www.w3school.com.cn/cssref/pr_box-orient.asp
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  -moz-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+.flex-direction(@direction) {
+  -webkit-flex-direction: @direction;
+  -moz-flex-direction: @direction;
+  -ms-flex-direction: @direction;
+  -o-flex-direction: @direction;
+  flex-direction: @direction;
+}
+
+// order //
+.order(@order) {
+  -webkit-box-ordinal-group: @order + 1;
+  -moz-box-ordinal-group: @order + 1;
+  -o-box-ordinal-group: @order + 1;
+  -webkit-order: @order;
+  -moz-order: @order;
+  -ms-order: @order;
+  -o-order: @order;
+  order: @order;
+}
+
+
+//justify content//
+
+//2009 property is box-pack
+//2009 property does not support a method for space-around
+
+//start
+//end
+//center
+//justify
+
+.justify-content(@justify-method) when (@justify-method = flex-start) {
+-webkit-box-pack: start;
+-moz-box-pack: start;
+-ms-box-pack: start;
+-o-box-pack: start;
+box-pack: start;
+}
+
+.justify-content(@justify-method) when (@justify-method = flex-end) {
+-webkit-box-pack: end;
+-moz-box-pack: end;
+-ms-box-pack: end;
+-o-box-pack: end;
+box-pack: end;
+}
+
+.justify-content(@justify-method) when (@justify-method = center) {
+-webkit-box-pack: center;
+-moz-box-pack: center;
+-ms-box-pack: center;
+-o-box-pack: center;
+box-pack: center;
+}
+
+// note there is no fallback 2009 spec support for space-around
+.justify-content(@justify-method) when (@justify-method = space-around) {
+-webkit-box-pack: justify;
+-moz-box-pack: justify;
+-ms-flex-pack: distribute;
+-o-box-pack: justify;
+box-pack: justify;
+}
+
+.justify-content(@justify-method) when (@justify-method = space-between) {
+-webkit-box-pack: justify;
+-moz-box-pack: justify;
+-ms-flex-pack: distribute;
+-o-box-pack: justify;
+box-pack: justify;
+}
+
+// 2011 spec
+
+// flex-start (default): items are packed toward the start line
+// flex-end: items are packed toward to end line
+// center: items are centered along the line
+// space-between: items are evenly distributed in the line; first item is on the start line, last item on the end line
+// space-around: items are evenly distributed in the line with equal space around them
+
+.justify-content(@justify-method) {
+-webkit-justify-content: @justify-method;
+-moz-justify-content: @justify-method;
+-ms-justify-content: @justify-method;
+-o-justify-content: @justify-method;
+justify-content: @justify-method;
+}
+
+.align-items(@align-method) when (@align-method = flex-start ){
+-moz-box-align:    start ;//https://developer.mozilla.org/en-US/docs/Web/CSS/box-align
+-webiit-box-align:  start ;
+-ms-flex-align: start;//http://realworldvalidator.com/css/module/Microsoft/-ms-flex-align
+-webkit-align-items: flex-start;
+align-items: flex-start;
+}
+.align-items(@align-method) when (@align-method = flex-end ){
+-moz-box-align:  end;
+-webiit-box-align: end;
+-ms-flex-align: end;
+-webkit-align-items: flex-end;
+align-items: flex-end;
+}
+.align-items(@align-method) when (@align-method = center ){
+-moz-box-align:  center;
+-webiit-box-align: center;
+-ms-flex-align: center;
+-webkit-align-items: center;
+align-items: center;
+}
+.align-items(@align-method) when (@align-method = baseline ){
+-moz-box-align:  baseline;
+-webiit-box-align: baseline;
+-ms-flex-align: baseline;
+-webkit-align-items: baseline;
+align-items: baseline;
+}
+.align-items(@align-method) when (@align-method = stretch ){
+-moz-box-align:  stretch;
+-webiit-box-align: stretch;
+-ms-flex-align: stretch;
+-webkit-align-items: stretch;
+align-items: stretch;
+}
+.align-items(@align-method){
+-moz-box-align:  @align-method;
+-webiit-box-align: @align-method;
+-ms-flex-align: @align-method;
+-webkit-align-items: @align-method;
+align-items: @align-method;
+}
+.flex-wrap(@wrap-method) when(@wrap-method = nowrap){
+ -ms-flex-wrap:none;
+ -moz-flex-wrap:nowrap;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.flex-wrap(@wrap-method) when(@wrap-method = wrap){
+ -ms-flex-wrap:wrap;
+ -moz-flex-wrap:wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-wrap(@wrap-method) when(@wrap-method = wrap-reverse){
+ -ms-flex-wrap:wrap-reverse;
+ -moz-flex-wrap:wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+.flex-wrap(@wrap-method){
+ -ms-flex-wrap:@wrap-method;
+ -moz-flex-wrap:@wrap-method;
+  -webkit-flex-wrap:@wrap-method;
+  flex-wrap:@wrap-method;
+}
