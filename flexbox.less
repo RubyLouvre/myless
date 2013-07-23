@@ -8,18 +8,18 @@
 -ms-user-select: none;
 user-select: none;
 }
+.box-sizing(@value){
+-webkit-box-sizing: @value; /* Safari/Chrome, other WebKit */
+-moz-box-sizing:@value;    /* Firefox, other Gecko */
+box-sizing: @value;         /* Opera/IE 8+ */
+}
 .flexbox() {
   // 2009 spec
   display: -webkit-box;
   display: -moz-box;
   display: -o-box;
-
   // tweener
-  display: -webkit-flexbox;
-  display: -moz-flexbox;
   display: -ms-flexbox;
-  display: -o-flexbox;
-
   // new spec
   display: -webkit-flex;
   display: -moz-flex;
