@@ -8,18 +8,28 @@
 -ms-user-select: none;
 user-select: none;
 }
-.box-sizing(@value){
--webkit-box-sizing: @value; /* Safari/Chrome, other WebKit */
--moz-box-sizing:@value;    /* Firefox, other Gecko */
-box-sizing: @value;         /* Opera/IE 8+ */
+.fixed-width(@value){
+   width:@value;
+   min-width:@value;
+   max-width:@value;
+}
+.fixed-height(@value){
+   height:@value;
+   min-height:@value;
+   max-height:@value;
 }
 .flexbox() {
   // 2009 spec
   display: -webkit-box;
   display: -moz-box;
   display: -o-box;
+
   // tweener
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
   display: -ms-flexbox;
+  display: -o-flexbox;
+
   // new spec
   display: -webkit-flex;
   display: -moz-flex;
@@ -114,7 +124,7 @@ box-sizing: @value;         /* Opera/IE 8+ */
 .justify-content(@justify-method) when (@justify-method = flex-start) {
 -webkit-box-pack: start;
 -moz-box-pack: start;
--ms-box-pack: start;
+-ms-flex-pack: start;
 -o-box-pack: start;
 box-pack: start;
 justify-content: flex-start;
@@ -123,7 +133,7 @@ justify-content: flex-start;
 .justify-content(@justify-method) when (@justify-method = flex-end) {
 -webkit-box-pack: end;
 -moz-box-pack: end;
--ms-box-pack: end;
+-ms-flex-pack: end;
 -o-box-pack: end;
 box-pack: end;
 justify-content: flex-end;
@@ -132,7 +142,7 @@ justify-content: flex-end;
 .justify-content(@justify-method) when (@justify-method = center) {
 -webkit-box-pack: center;
 -moz-box-pack: center;
--ms-box-pack: center;
+-ms-flex-pack: center; 
 -o-box-pack: center;
 box-pack: center;
 justify-content: center;
@@ -143,18 +153,18 @@ justify-content: center;
 .justify-content(@justify-method) when (@justify-method = space-between) {
 -webkit-box-pack: justify;
 -moz-box-pack: justify;
+-ms-flex-pack: justify;
 -o-box-pack: justify;
 box-pack: justify;
--ms-flex-pack: justify;
 justify-content: space-between;
 }
 // note there is no fallback 2009 spec support for space-around
 .justify-content(@justify-method) when (@justify-method = space-around) {
 -webkit-box-pack: justify;
 -moz-box-pack: justify;
+-ms-flex-pack: distribute;
 -o-box-pack: justify;
 box-pack: justify;
--ms-flex-pack: distribute;
 justify-content: space-around;
 }
 
