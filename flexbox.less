@@ -1,23 +1,5 @@
 // display: flex
-//  http://stackoverflow.com/questions/15662578/flexible-box-model-display-flex-box-flexbox by RubyLouvre
-.user-select(){
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
-.fixed-width(@value){
-   width:@value;
-   min-width:@value;
-   max-width:@value;
-}
-.fixed-height(@value){
-   height:@value;
-   min-height:@value;
-   max-height:@value;
-}
+
 .flexbox() {
   // 2009 spec
   display: -webkit-box;
@@ -50,7 +32,7 @@ user-select: none;
   -o-flex: @flex;
   flex: @flex;
 }
-
+@flexvalue: 1 1 auto;
 // flex-derection = box-orient + box-direction
 .flex-direction(@direction) when (@direction = row) {
   -webkit-box-orient: horizontal;
@@ -251,3 +233,30 @@ align-items: @align-method;
   -webkit-flex-wrap:@wrap-method;
   flex-wrap:@wrap-method;
 }
+
+//===========================================================
+//  http://stackoverflow.com/questions/15662578/flexible-box-model-display-flex-box-flexbox by RubyLouvre
+.user-select(){
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.fixed-width(@value){
+   width:@value;
+   min-width:@value;
+   max-width:@value;
+}
+.fixed-height(@value){
+   height:@value;
+   min-height:@value;
+   max-height:@value;
+}
+.box-sizing(@value){
+-webkit-box-sizing: @value; /* Safari/Chrome, other WebKit */
+-moz-box-sizing:@value;    /* Firefox, other Gecko */
+box-sizing: @value;         /* Opera/IE 8+ */
+}
+//=========================================================
