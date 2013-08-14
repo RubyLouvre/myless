@@ -233,6 +233,36 @@ align-items: @align-method;
   -webkit-flex-wrap:@wrap-method;
   flex-wrap:@wrap-method;
 }
+.align-self(@value) when(@value = flex-start){
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+.align-self(@value) when(@value = flex-end){
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+}
+.align-self(@value) when(@value = center){
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+.align-self(@value) when(@value = baseline){
+    -webkit-align-self: baseline;
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
+}
+.align-self(@value) when(@value = stretch){
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+.align-self(@value){
+   -webkit-align-self:@value;
+   -ms-flex-item-align:@value;
+   lign-self:@value
+}
 
 //===========================================================
 //  http://stackoverflow.com/questions/15662578/flexible-box-model-display-flex-box-flexbox by RubyLouvre
@@ -258,5 +288,21 @@ user-select: none;
 -webkit-box-sizing: @value; /* Safari/Chrome, other WebKit */
 -moz-box-sizing:@value;    /* Firefox, other Gecko */
 box-sizing: @value;         /* Opera/IE 8+ */
+}
+.brimming(){
+      width: 100%;
+      height: 100%;
+}
+.transform(@value){
+       transform:@value;
+       -moz-transform:@value;
+       -webkit-transform:@value;
+       -ms-transform:@value;
+}
+.box-shadow(@value){
+        -webkit-box-shadow: @value;
+        -moz-box-shadow: @value;
+        -ms-box-shadow:@value;
+        box-shadow:@value;
 }
 //=========================================================
