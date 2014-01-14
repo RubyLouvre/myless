@@ -122,32 +122,32 @@ justify-content: flex-end;
 }
 
 .justify-content(@justify-method) when (@justify-method = center) {
--webkit-box-pack: center;
--moz-box-pack: center;
--ms-flex-pack: center; 
--o-box-pack: center;
-box-pack: center;
-justify-content: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center; 
+    -o-box-pack: center;
+    box-pack: center;
+    justify-content: center;
 }
 
 
 
 .justify-content(@justify-method) when (@justify-method = space-between) {
--webkit-box-pack: justify;
--moz-box-pack: justify;
--ms-flex-pack: justify;
--o-box-pack: justify;
-box-pack: justify;
-justify-content: space-between;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -o-box-pack: justify;
+    box-pack: justify;
+    justify-content: space-between;
 }
 // note there is no fallback 2009 spec support for space-around
 .justify-content(@justify-method) when (@justify-method = space-around) {
--webkit-box-pack: justify;
--moz-box-pack: justify;
--ms-flex-pack: distribute;
--o-box-pack: justify;
-box-pack: justify;
-justify-content: space-around;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: distribute;
+    -o-box-pack: justify;
+    box-pack: justify;
+    justify-content: space-around;
 }
 
 // 2011 spec
@@ -159,79 +159,78 @@ justify-content: space-around;
 // space-around: items are evenly distributed in the line with equal space around them
 
 .justify-content(@justify-method) {
--webkit-justify-content: @justify-method;
--moz-justify-content: @justify-method;
--ms-justify-content: @justify-method;
--o-justify-content: @justify-method;
-justify-content: @justify-method;
+    -webkit-justify-content: @justify-method;
+    -moz-justify-content: @justify-method;
+    -ms-justify-content: @justify-method;
+    -o-justify-content: @justify-method;
+    justify-content: @justify-method;
 }
 
 .align-items(@align-method) when (@align-method = flex-start ){
--moz-box-align:    start ;//https://developer.mozilla.org/en-US/docs/Web/CSS/box-align
--webkit-box-align:  start ;
--ms-flex-align: start;//http://realworldvalidator.com/css/module/Microsoft/-ms-flex-align
--webkit-align-items: flex-start;
-align-items: flex-start;
+    -moz-box-align: start ;//https://developer.mozilla.org/en-US/docs/Web/CSS/box-align
+    -webkit-box-align: start ;
+    -ms-flex-align: start;//http://realworldvalidator.com/css/module/Microsoft/-ms-flex-align
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
 }
 .align-items(@align-method) when (@align-method = flex-end ){
--moz-box-align:  end;
--webkit-box-align: end;
--ms-flex-align: end;
--webkit-align-items: flex-end;
-align-items: flex-end;
+    -moz-box-align:  end;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
 }
 .align-items(@align-method) when (@align-method = center ){
--moz-box-align:  center;
--webkit-box-align: center;
-box-align: center;
--ms-flex-align: center;
--webkit-align-items: center;
-align-items: center;
+    -moz-box-align:  center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 }
 .align-items(@align-method) when (@align-method = baseline ){
--moz-box-align:  baseline;
--webkit-box-align: baseline;
--ms-flex-align: baseline;
--webkit-align-items: baseline;
-align-items: baseline;
-}
+    -moz-box-align:  baseline;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    -webkit-align-items: baseline;
+    align-items: baseline;
+} 
 .align-items(@align-method) when (@align-method = stretch ){
--moz-box-align:  stretch;
--webkit-box-align: stretch;
--ms-flex-align: stretch;
--webkit-align-items: stretch;
-align-items: stretch;
+    -moz-box-align:  stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
 }
 .align-items(@align-method){
--moz-box-align:  @align-method;
--webkit-box-align: @align-method;
--ms-flex-align: @align-method;
--webkit-align-items: @align-method;
-align-items: @align-method;
+   -moz-box-align:  @align-method;
+   -webkit-box-align: @align-method;
+   -ms-flex-align: @align-method;
+   -webkit-align-items: @align-method;
+   align-items: @align-method;
 }
 .flex-wrap(@wrap-method) when(@wrap-method = nowrap){
- -ms-flex-wrap:none;
- -moz-flex-wrap:nowrap;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-}
+   -ms-flex-wrap:none;
+   -moz-flex-wrap:nowrap;
+   -webkit-flex-wrap: nowrap;
+   flex-wrap: nowrap;
+} 
 .flex-wrap(@wrap-method) when(@wrap-method = wrap){
- -ms-flex-wrap:wrap;
- -moz-flex-wrap:wrap;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+   -ms-flex-wrap:wrap;
+   -moz-flex-wrap:wrap;
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
 }
 .flex-wrap(@wrap-method) when(@wrap-method = wrap-reverse){
- -ms-flex-wrap:wrap-reverse;
- -moz-flex-wrap:wrap-reverse;
-  -webkit-flex-wrap: wrap-reverse;
-  flex-wrap: wrap-reverse;
+   -ms-flex-wrap:wrap-reverse;
+   -moz-flex-wrap:wrap-reverse;
+   -webkit-flex-wrap: wrap-reverse;
+   flex-wrap: wrap-reverse;
 }
 .flex-wrap(@wrap-method){
- -ms-flex-wrap:@wrap-method;
- -moz-flex-wrap:@wrap-method;
-  -webkit-flex-wrap:@wrap-method;
-  flex-wrap:@wrap-method;
+   -ms-flex-wrap:@wrap-method;
+   -moz-flex-wrap:@wrap-method;
+   -webkit-flex-wrap:@wrap-method;
+   flex-wrap:@wrap-method;
 }
 .align-self(@value) when(@value = flex-start){
     -webkit-align-self: flex-start;
@@ -259,35 +258,35 @@ align-items: @align-method;
     align-self: stretch;
 }
 .align-self(@value){
-   -webkit-align-self:@value;
-   -ms-flex-item-align:@value;
-   lign-self:@value
+    -webkit-align-self:@value;
+    -ms-flex-item-align:@value;
+    lign-self:@value
 }
 
 //===========================================================
 //  http://stackoverflow.com/questions/15662578/flexible-box-model-display-flex-box-flexbox by RubyLouvre
 .user-select(){
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
 }
 .fixed-width(@value){
-   width:@value;
-   min-width:@value;
-   max-width:@value;
+    width:@value;
+    min-width:@value;
+    max-width:@value;
 }
 .fixed-height(@value){
-   height:@value;
-   min-height:@value;
-   max-height:@value;
+    height:@value;
+    min-height:@value;
+    max-height:@value;
 }
 .box-sizing(@value){
--webkit-box-sizing: @value; /* Safari/Chrome, other WebKit */
--moz-box-sizing:@value;    /* Firefox, other Gecko */
-box-sizing: @value;         /* Opera/IE 8+ */
+   -webkit-box-sizing: @value; /* Safari/Chrome, other WebKit */
+   -moz-box-sizing:@value;    /* Firefox, other Gecko */
+   box-sizing: @value;         /* Opera/IE 8+ */
 }
 .brimming(){
       width: 100%;
